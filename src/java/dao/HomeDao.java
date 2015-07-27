@@ -35,10 +35,9 @@ public class HomeDao {
         return null;
 
     }
-    
-     public ResultSet listarComentrários() {
-        return null;
 
+    public ResultSet listarComentrários() {
+        return null;
     }
 
     public static void fechaConexao() {
