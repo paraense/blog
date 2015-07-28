@@ -1,5 +1,6 @@
 package controllers;
 
+import beans.Comentario;
 import beans.Post;
 import dao.HomeDao;
 import java.io.IOException;
@@ -21,7 +22,9 @@ import javax.servlet.http.HttpServletResponse;
 public class Home extends HttpServlet {
 
     Post postagem;
+    Comentario comentario;
     List<Post> posts;
+    List<Comentario> comentarios;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,16 +32,32 @@ public class Home extends HttpServlet {
         posts = new ArrayList<>();
 
         try {
+            //Carregar postagens
             ResultSet postagens = hd.listarPostagens();
             while (postagens.next()) {
                 postagem = new Post();
                 postagem.setTitulo(postagens.getString("titulo"));
                 postagem.setTexto(postagens.getString("texto"));
+
+                //Carrega comentários
+                ResultSet coment = hd.listarComentarios(String.valueOf(postagens.getInt("id")));
+                if (coment != null) {
+
+                    while (coment.next()) {
+                        comentario = new Comentario();
+                        comentario.setNome(coment.getString("nome"));
+                        comentario.setEmail(coment.getString("email"));
+                        comentario.setTexto(coment.getString("texto"));
+                        comentario.setDatahora(coment.getDate("datahora"));
+                        postagem.getComentarios().add(comentario);
+                    }
+                }
                 posts.add(postagem);
             }
+            //fecha conexão
             hd.fechaConexao();
             req.setAttribute("postagens", posts);
-            System.out.println("Número de postagens: "+posts.size());
+            System.out.println("Número de postagens: " + posts.size());
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);

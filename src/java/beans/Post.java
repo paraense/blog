@@ -6,6 +6,8 @@
 package beans;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,6 +18,7 @@ public class Post {
    private String titulo;
    private String texto;
    private Date data;
+   private List<Comentario> comentarios = new ArrayList<>();
 
     public String getTitulo() {
         return titulo;
@@ -40,7 +43,16 @@ public class Post {
     public void setData(Date data) {
         this.data = data;
     }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
    
+    
    
     
 }
