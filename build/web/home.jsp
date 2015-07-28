@@ -80,7 +80,7 @@
                         <hr>
 
                         <!-- Preview Image -->
-                        <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                        <img class="img-responsive" src="http://www.eddic.cn/images/banner_java_se_7_programming.png" alt="">
 
                         <hr>
 
@@ -155,7 +155,7 @@
 
                     <!-- Blog Search Well -->
                     <div class="well">
-                        <h4>Blog Search</h4>
+                        <h4>Pesquisar</h4>
                         <div class="input-group">
                             <input type="text" class="form-control">
                             <span class="input-group-btn">
@@ -169,7 +169,7 @@
 
                     <!-- Blog Categories Well -->
                     <div class="well">
-                        <h4>Blog Categories</h4>
+                        <h4>Categorias</h4>
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="list-unstyled">

@@ -13,13 +13,15 @@ import java.util.logging.Logger;
 public class ConexaoJDBC {
 
     public static String URL = "jdbc:mysql://localhost:3306/blog";
-    public static String USER = "root";
+    public static String URL2 = "jdbc:postgresql://localhost:5432/blog";
+    public static String USER = "postgres";
     public static String SENHA = "root";
 
     public static Connection getConexao() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         try {
-            DriverManager.registerDriver(new com.mysql.jdbc.Driver()); 
-            return DriverManager.getConnection(URL, USER, SENHA);
+            DriverManager.registerDriver(new org.postgresql.Driver());
+            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            return DriverManager.getConnection(URL2, USER, SENHA);
             
         } catch (SQLException ex) {
             Logger.getLogger(ConexaoJDBC.class.getName()).log(Level.SEVERE, null, ex);
