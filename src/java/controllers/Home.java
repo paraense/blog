@@ -36,6 +36,7 @@ public class Home extends HttpServlet {
                 postagem.setTexto(postagens.getString("texto"));
                 posts.add(postagem);
             }
+            // nao tem porra nenhuma nesse método
             hd.fechaConexao();
             req.setAttribute("postagens", posts);
             System.out.println("Número de postagens: "+posts.size());
