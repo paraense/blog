@@ -14,14 +14,12 @@ import java.util.logging.Logger;
 public class HomeDao {
 
     public static Connection c = null;
-    private static String postagens = "SELECT * FROM post";
-    private static String comentarios = "SELECT * FROM comentario where comentario.id_post =";
 
     public ResultSet listarPostagens() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         c = ConexaoJDBC.getConexao();
 
         try {
-            return c.prepareStatement(postagens).executeQuery();
+            return c.prepareStatement("SELECT * FROM post").executeQuery();
 
         } catch (SQLException ex) {
             Logger.getLogger(HomeDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -32,10 +30,9 @@ public class HomeDao {
     }
 
     public static ResultSet listarComentarios(String id) {
-        String comentarios = "SELECT * FROM comentario where comentario.id_post ="+id;
-        System.out.println("SELECT * FROM comentario where comentario.id_post ="+id);
+        String comentarios = "SELECT * FROM comentario where comentario.id_post =" + id;
         try {
-          return c.prepareStatement(comentarios).executeQuery();
+            return c.prepareStatement(comentarios).executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(HomeDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -43,11 +40,10 @@ public class HomeDao {
     }
 
     public ResultSet listarCategorias() {
-        return null;
-
-    }
-
-    public ResultSet listarComentarios() {
+        try {
+            return c.prepareStatement("SELECT * FROM categoria").executeQuery();
+        } catch (Exception e) {
+        }
         return null;
     }
 

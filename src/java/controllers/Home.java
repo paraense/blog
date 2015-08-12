@@ -1,5 +1,6 @@
 package controllers;
 
+import beans.Categoria;
 import beans.Comentario;
 import beans.Post;
 import dao.HomeDao;
@@ -22,14 +23,17 @@ import javax.servlet.http.HttpServletResponse;
 public class Home extends HttpServlet {
 
     Post postagem;
+    Categoria categoria;
     Comentario comentario;
     List<Post> posts;
     List<Comentario> comentarios;
+    List<Categoria> categorias;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HomeDao hd = new HomeDao();
         posts = new ArrayList<>();
+        categorias = new ArrayList<>();
 
         try {
             //Carregar postagens
@@ -48,12 +52,21 @@ public class Home extends HttpServlet {
                         comentario.setNome(coment.getString("nome"));
                         comentario.setEmail(coment.getString("email"));
                         comentario.setTexto(coment.getString("texto"));
-                        comentario.setDatahora(coment.getDate("datahora"));
+                        comentario.setDatahora(coment.getDate("data"));
                         postagem.getComentarios().add(comentario);
                     }
                 }
                 posts.add(postagem);
             }
+          
+            //lista categorias
+            ResultSet cat = hd.listarCategorias();
+            while (cat.next()) {
+                categoria = new Categoria();
+                categoria.setNome(cat.getString("nome"));
+                categorias.add(categoria);
+            }
+
             //fecha conexão
             hd.fechaConexao();
             req.setAttribute("postagens", posts);
