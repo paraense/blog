@@ -87,14 +87,19 @@
                         <!-- Comments Form -->
                         <div class="well">
                             <h4>Deixe um comentário:</h4>
-                            <form role="form">
+                            <form role="form" action="comentario/incluir" method="POST">
                                 <div class="form-group">
                                     Nome:
-                                    <input type="text" name="nome" class="form-control" rows="3">
+                                    <input type="text" name="nome" class="form-control" rows="3" required>
+                                </div>
+                                  <div class="form-group">
+                                    Email:
+                                    <input type="email" name="email" class="form-control" rows="3" required>
                                 </div>
                                 <div class="form-group">
                                     Comentário:
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="texto" rows="3"></textarea>
+                                    <input type="hidden" name="id_post" value="${p.id}" />
                                 </div>
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </form>

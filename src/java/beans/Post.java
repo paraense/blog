@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class Post {
     
+   private Integer id; 
    private String titulo;
    private String texto;
    private Date data;
@@ -51,6 +52,16 @@ public class Post {
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    
    
     
    

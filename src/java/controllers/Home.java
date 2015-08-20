@@ -39,7 +39,9 @@ public class Home extends HttpServlet {
             //Carregar postagens
             ResultSet postagens = hd.listarPostagens();
             while (postagens.next()) {
+               
                 postagem = new Post();
+                postagem.setId(postagens.getInt("id"));
                 postagem.setTitulo(postagens.getString("titulo"));
                 postagem.setTexto(postagens.getString("texto"));
 
@@ -55,6 +57,7 @@ public class Home extends HttpServlet {
                         comentario.setDatahora(coment.getDate("data"));
                         postagem.getComentarios().add(comentario);
                     }
+                    System.out.println("número de postagens: "+postagem.getComentarios().size());  
                 }
                 posts.add(postagem);
             }
@@ -75,7 +78,7 @@ public class Home extends HttpServlet {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+       
         RequestDispatcher rd = req.getRequestDispatcher("/home.jsp");
         rd.forward(req, resp);
 
