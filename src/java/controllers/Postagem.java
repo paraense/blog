@@ -39,10 +39,10 @@ public class Postagem extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-        System.out.println("id postagem"+ id);
         try {
             pd = new PostagemDao();
             ResultSet rs = pd.getPostagem(id);
+            
             posts = new ArrayList<>();
             while (rs.next()) {
                 postagem = new Post();

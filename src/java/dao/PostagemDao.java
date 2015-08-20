@@ -16,12 +16,14 @@ import java.sql.SQLException;
  */
 public class PostagemDao {
 
-    private Connection c = null;
+    private static Connection c = null;
 
     public ResultSet getPostagem(String id) throws SQLException {
         try {
             c = ConexaoJDBC.getConexao();
-            return c.prepareStatement("select * from post where id=" + id).executeQuery();
+              System.out.println("select * from post where id=" + id);
+            return c.prepareStatement("select * from post where id="+id).executeQuery();
+          
         } catch (Exception e) {
         } finally {
             c.close();
