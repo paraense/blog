@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import banco.ConexaoJDBC;
@@ -19,14 +14,14 @@ public class PostagemDao {
     private static Connection c = null;
 
     public ResultSet getPostagem(String id) throws SQLException {
+
         try {
             c = ConexaoJDBC.getConexao();
-              System.out.println("select * from post where id=" + id);
-            return c.prepareStatement("select * from post where id="+id).executeQuery();
-          
+            return c.prepareStatement("select * from post where id=" + id).executeQuery();
+
         } catch (Exception e) {
         } finally {
-            c.close();
+          
         }
         return null;
     }

@@ -29,7 +29,7 @@ public class HomeDao {
         return null;
     }
 
-    public static ResultSet listarComentarios(String id) {
+    public ResultSet listarComentarios(String id) {
         String comentarios = "SELECT * FROM comentario where comentario.post_id="+id;
         try {
             return c.prepareStatement(comentarios).executeQuery();

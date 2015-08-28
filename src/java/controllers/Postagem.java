@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
+import banco.ConexaoJDBC;
 import beans.Categoria;
 import beans.Comentario;
 import beans.Post;
@@ -29,53 +25,56 @@ import javax.servlet.http.HttpServletResponse;
 public class Postagem extends HttpServlet {
 
     Connection c = null;
-    PostagemDao pd = new PostagemDao();
+    PostagemDao pd;
     Post postagem;
     Categoria categoria;
     Comentario comentario;
+    ResultSet resultado;
     List<Post> posts;
     List<ComentarioServlet> comentarios;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
+
         try {
             pd = new PostagemDao();
-            ResultSet rs = pd.getPostagem(id);
-            
             posts = new ArrayList<>();
-            while (rs.next()) {
+
+            //Realiza busca da postagem por ID
+            resultado = pd.getPostagem(id);
+            while (resultado.next()) {
                 postagem = new Post();
-                postagem.setTitulo(rs.getString("titulo"));
-                postagem.setTexto(rs.getString("texto"));
-                postagem.setData(rs.getDate("data"));
-                System.out.println("postagem: "+ postagem.getTitulo());
+                postagem.setId(resultado.getInt("id"));
+                postagem.setTitulo(resultado.getString("titulo"));
+                postagem.setTexto(resultado.getString("texto"));
+                postagem.setData(resultado.getDate("data"));
 
+                //Realiza a busca dos comentários
                 ResultSet rsc = pd.getComentarios(id);
-
                 while (rsc.next()) {
                     comentario = new Comentario();
                     comentario.setNome(rsc.getString("nome"));
                     comentario.setTexto(rsc.getString("texto"));
                     comentario.setDatahora(rsc.getDate("data"));
-                    
-                    System.out.println("Comentário: "+ comentario.getNome());
-                    
+
                     postagem.getComentarios().add(comentario);
                 }
+                
                 posts.add(postagem);
-                System.out.println("número de comentarios de comentários: "+posts.get(0).getComentarios().size());
-               
-              req.setAttribute("postagens", posts);
-              
             }
+            req.setAttribute("postagens", posts);
+            resultado.close();
 
         } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            
+
         }
-        
+
         RequestDispatcher rd = req.getRequestDispatcher("/home.jsp");
         rd.forward(req, resp);
-        
 
     }
 

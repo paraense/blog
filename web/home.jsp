@@ -2,9 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +19,6 @@
     </head>
 
     <body>
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -57,14 +54,13 @@
         <!-- Page Content -->
         <div class="container">
             <div class="row">
-
                 <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
-
                     <!-- Blog Post -->
+                   
                     <c:forEach var="p" items="${postagens}">
                         <!-- Title -->
-                        <h1>${p.titulo}</h1>
+                        <h1><a href="postagem?id=${p.id}"> ${p.titulo}</a></h1>
 
                         <!-- Author -->
                         <p class="lead">
@@ -92,7 +88,7 @@
                                     Nome:
                                     <input type="text" name="nome" class="form-control" rows="3" required>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     Email:
                                     <input type="email" name="email" class="form-control" rows="3" required>
                                 </div>
