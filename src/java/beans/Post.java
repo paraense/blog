@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beans;
 
 import java.sql.Date;
@@ -14,12 +9,13 @@ import java.util.List;
  * @author John
  */
 public class Post {
-    
-   private Integer id; 
-   private String titulo;
-   private String texto;
-   private Date data;
-   private List<Comentario> comentarios = new ArrayList<>();
+
+    private Integer id;
+    private String titulo;
+    private String texto;
+    private String resumo;
+    private Date data;
+    private List<Comentario> comentarios = new ArrayList<>();
 
     public String getTitulo() {
         return titulo;
@@ -53,6 +49,15 @@ public class Post {
         this.comentarios = comentarios;
     }
 
+    public String getResumo() {
+        return resumo;
+    }
+
+    public void setResumo(String resumo) {
+        this.resumo = resumo;
+    }
+        
+
     public Integer getId() {
         return id;
     }
@@ -61,9 +66,4 @@ public class Post {
         this.id = id;
     }
 
-    
-   
-    
-   
-    
 }

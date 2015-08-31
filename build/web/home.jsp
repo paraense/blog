@@ -57,7 +57,7 @@
                 <!-- Blog Post Content Column -->
                 <div class="col-lg-8">
                     <!-- Blog Post -->
-                   
+
                     <c:forEach var="p" items="${postagens}">
                         <!-- Title -->
                         <h1><a href="postagem?id=${p.id}"> ${p.titulo}</a></h1>
@@ -76,48 +76,10 @@
                         <hr>
                         <!-- Post Content -->
                         <p>
-                            ${p.texto}
+                            ${p.resumo}
                         </p>
                         <hr>
-                        <!-- Blog Comments -->
-                        <!-- Comments Form -->
-                        <div class="well">
-                            <h4>Deixe um comentário:</h4>
-                            <form role="form" action="comentario/incluir" method="POST">
-                                <div class="form-group">
-                                    Nome:
-                                    <input type="text" name="nome" class="form-control" rows="3" required>
-                                </div>
-                                <div class="form-group">
-                                    Email:
-                                    <input type="email" name="email" class="form-control" rows="3" required>
-                                </div>
-                                <div class="form-group">
-                                    Comentário:
-                                    <textarea class="form-control" name="texto" rows="3"></textarea>
-                                    <input type="hidden" name="id_post" value="${p.id}" />
-                                </div>
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </form>
-                        </div>
-                        <hr>
-
-                        <!-- Posted Comments -->
-                        <c:forEach var="c" items="${p.comentarios}">
-                            <!-- Comment -->
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="http://www.iwtraining.com.br/images/Produtos/livre/JAVA_icone.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">${c.nome}
-                                        <small>${c.datahora}</small>
-                                    </h4>
-                                    ${c.texto}
-                                </div>
-                            </div>
-                            <br/>
-                        </c:forEach>
+                        <a href="postagem?id=${p.id}" class="btn btn-primary btn-sm" >Ler mais...</a>
                     </c:forEach>
                 </div>
 
@@ -126,15 +88,18 @@
                 <div class="col-md-4">
                     <!-- form pesquisa -->
                     <div class="well">
+
                         <h4>Pesquisar</h4>
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div> <!-- /.input-group -->
+                        <form action="busca">
+                            <div class="input-group">
+                                <input type="text" name="filtro" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div> <!-- /.input-group -->
+                        </form>
                     </div>
                     <!--Lista de categorias-->
                     <div class="well">
@@ -169,10 +134,10 @@
                     <!-- Side Widget Well -->
                     <div class="well">
                         <h4>Sobre o autor</h4>
-                        <p>Brasileiro, pai de Luiza Gomes.
+                        <p>Brasileiro, pai da Luiza.
                             Trabalha com informática desde 2006, estudou de Análise e Desenvolvimento de Sistemas.
-                            Atualmente trabalha como Programador.
-                            Gosta da futebol, música , cinema, e informática é sua paixão.</p>
+                            Atualmente trabalha como Programador Java em uma empresa de desenvolvimento de software.
+                            Gosta da futebol, música, cinema. Informática é sua paixão.</p>
                     </div>
                 </div>
             </div>
