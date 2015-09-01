@@ -2,54 +2,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Javeiro</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="css/blog-post.css" rel="stylesheet">
+        <!--Imports css, meta etc..-->
+        <%@include file="templates/head.jsp" %>
     </head>
 
     <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Blog do Javeiro</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">Sobre o autor</a>
-                        </li>
-                        <li>
-                            <a href="#">Sobre o Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
+        <!--Barra de menu - topo -->
+        <%@include file="templates/topo.jsp" %>
 
         <!-- Page Content -->
         <div class="container">
@@ -86,78 +47,20 @@
 
                 <!-- Blog Sidebar Widgets Column -->
                 <div class="col-md-4">
-                    <!-- form pesquisa -->
-                    <div class="well">
+                    <%@include file="templates/lateral.jsp" %>
+                </div><!-- /.row -->
+                <hr>
 
-                        <h4>Pesquisar</h4>
-                        <form action="busca">
-                            <div class="input-group">
-                                <input type="text" name="filtro" class="form-control">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div> <!-- /.input-group -->
-                        </form>
-                    </div>
-                    <!--Lista de categorias-->
-                    <div class="well">
-                        <h4>Categorias</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                    <li><a href="#">Category Name</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> <!-- /.row -->
-                    </div>
-                    <!-- Side Widget Well -->
-                    <div class="well">
-                        <h4>Sobre o autor</h4>
-                        <p>Brasileiro, pai da Luiza.
-                            Trabalha com informática desde 2006, estudou de Análise e Desenvolvimento de Sistemas.
-                            Atualmente trabalha como Programador Java em uma empresa de desenvolvimento de software.
-                            Gosta da futebol, música, cinema. Informática é sua paixão.</p>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.row -->
-        <hr>
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; John Gomes 2015</p>
-                </div>
-            </div><!-- /.row -->
-        </footer>
-    </div><!-- /.container -->
+                <!-- Footer -->
+                <%@include file="templates/rodape.jsp" %>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+            </div><!-- /.container -->
 
-</body>
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+
+    </body>
 
 </html>
