@@ -6,7 +6,12 @@
         <script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
             tinymce.init({
+                plugins: "preview, code, image, textcolor, emoticons",
+                toolbar: "undo redo | bold italic |  fontsizeselect | forecolor backcolor | link image | preview | code | emoticons ",
+                fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                language: "pt_BR",
                 selector: "#mytextarea"
+
             });
         </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
