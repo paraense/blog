@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import util.Formatadores;
 
 /**
  *
@@ -83,6 +84,22 @@ public class PostagemDao {
         } catch (Exception e) {
         }
         return null;
+    }
+
+    public String incluirPost(String texto, String titulo, String resumo) {
+
+        try {
+            String data =Formatadores.getData();
+            
+            c = ConexaoJDBC.getConexao();
+            c.prepareStatement("INSERT INTO post (id, texto, titulo, resumo, data) VALUES(NULL,'"+texto+"','"+titulo+"','"+resumo+"',"+data+")").execute();
+            return "index.jsp";
+
+        } catch (Exception e) {
+        }
+
+        return "erro";
+
     }
 
 }
