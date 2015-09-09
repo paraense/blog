@@ -1,9 +1,9 @@
-package controllers;
+package servlets;
 
 import banco.ConexaoJDBC;
-import beans.Categoria;
-import beans.Comentario;
-import beans.Post;
+import entidades.Categoria;
+import entidades.Comentario;
+import entidades.Post;
 import dao.PostagemDao;
 import java.io.IOException;
 import java.sql.Connection;

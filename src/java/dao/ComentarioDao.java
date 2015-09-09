@@ -1,7 +1,7 @@
 package dao;
 
 import banco.ConexaoJDBC;
-import beans.Comentario;
+import entidades.Comentario;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import java.sql.Connection;
 import java.sql.ResultSet;

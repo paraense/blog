@@ -1,4 +1,4 @@
-package controllers;
+package servlets;
 
 import dao.PostagemDao;
 import java.io.IOException;

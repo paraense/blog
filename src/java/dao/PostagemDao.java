@@ -1,8 +1,8 @@
 package dao;
 
 import banco.ConexaoJDBC;
-import beans.Comentario;
-import beans.Post;
+import entidades.Comentario;
+import entidades.Post;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

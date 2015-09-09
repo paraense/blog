@@ -1,4 +1,4 @@
-package beans;
+package entidades;
 
 import java.sql.Date;
 

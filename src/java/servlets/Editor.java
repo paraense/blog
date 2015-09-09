@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package servlets;
 
 import dao.PostagemDao;
 import java.io.IOException;
@@ -20,6 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/editor")
 public class Editor extends HttpServlet{
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+     resp.sendRedirect("area-postagem.jsp");
+    
+    }
+   
+    
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PostagemDao pd = new PostagemDao();

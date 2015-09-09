@@ -1,5 +1,5 @@
 <!-- form pesquisa -->
-                    <div class="well">
+<!--                    <div class="well">
 
                         <h4>Pesquisar</h4>
                         <form action="busca">
@@ -10,9 +10,9 @@
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>
-                            </div> <!-- /.input-group -->
+                            </div>  /.input-group 
                         </form>
-                    </div>
+                    </div>-->
                     <!--Lista de categorias-->
                     <div class="well">
                         <h4>Categorias</h4>

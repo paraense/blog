@@ -11,3 +11,9 @@
 
 <!-- Custom CSS -->
 <link href="css/blog-post.css" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" href="img/favicon-java.png" />
+
+
+

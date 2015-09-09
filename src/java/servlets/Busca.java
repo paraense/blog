@@ -1,6 +1,6 @@
-package controllers;
+package servlets;
 
-import beans.Post;
+import entidades.Post;
 import dao.PostagemDao;
 import java.io.IOException;
 import java.io.PrintWriter;

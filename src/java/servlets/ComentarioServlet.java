@@ -1,4 +1,4 @@
-package controllers;
+package servlets;
 
 import dao.ComentarioDao;
 import java.io.IOException;
