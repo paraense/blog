@@ -9,6 +9,6 @@ package servlets;
  *
  * @author John
  */
-public class Contato {
+public class ContatoServlet {
     
 }

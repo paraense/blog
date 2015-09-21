@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author john
  */
 @WebServlet(urlPatterns = "/busca")
-public class Busca extends HttpServlet {
+public class BuscaServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

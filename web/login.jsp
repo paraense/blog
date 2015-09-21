@@ -19,7 +19,7 @@
                         Login:
                         <input type="text" class="form-control" name="login" />
                         Senha:
-                        <input type="password" class="form-control" name="login" />
+                        <input type="password" class="form-control" name="senha" />
                         <br/>
                         <button class="btn btn-primary" >Entrar</button>
                     </form>

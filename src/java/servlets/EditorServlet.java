@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author John
  */
 @WebServlet(urlPatterns = "/editor")
-public class Editor extends HttpServlet{
+public class EditorServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-     resp.sendRedirect("area-postagem.jsp");
+     resp.sendRedirect("editor.jsp");
     
     }
    

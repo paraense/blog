@@ -30,7 +30,7 @@ public class HomeDao {
     }
 
     public ResultSet listarComentarios(String id) {
-        String comentarios = "SELECT * FROM comentario where comentario.post_id="+id;
+        String comentarios = "SELECT * FROM comentario where comentario.post_id=" + id;
         try {
             return c.prepareStatement(comentarios).executeQuery();
         } catch (SQLException ex) {
