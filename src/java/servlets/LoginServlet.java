@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,12 +42,16 @@ public class LoginServlet extends HttpServlet {
                 usuario.setNome(resultado.getString("nome"));
                 usuario.setLogin(resultado.getString("login"));
 
-                resp.sendRedirect("editor");
+                Cookie c = new Cookie("usuario", usuario.getLogin());
+                resp.addCookie(c);
                 System.out.println("Usuario logado: " + usuario.getNome());
             } else {
                 System.out.println("Login ou senha incorretos");
+                Logger.getLogger("Senha errada");
             }
+
             resultado.close();
+            resp.sendRedirect("editor");
         } catch (SQLException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

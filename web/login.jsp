@@ -10,11 +10,11 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <img src="http://dri1.img.digitalrivercontent.net/Storefront/Site/msusa/images/promo/en-US/msstore_400x400.jpg" />
+                <div class="col-lg-8" style="padding-left: 5%">
+                    <img src="http://mscmariotti.pro.br/wp-content/uploads/2015/05/product-development-using-java.jpg" />
                 </div>
                 <div class="col-lg-4">
-                    <form action="login" style="padding-top: 30%;" method="POST">
+                    <form action="login" style="padding-top: 25%;" method="POST">
                         <h2>login</h2>
                         Login:
                         <input type="text" class="form-control" name="login" />
