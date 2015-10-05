@@ -44,18 +44,18 @@ public class LoginServlet extends HttpServlet {
 
                 Cookie c = new Cookie("usuario", usuario.getLogin());
                 resp.addCookie(c);
-                System.out.println("Usuario logado: " + usuario.getNome());
+                
+              
             } else {
-                System.out.println("Login ou senha incorretos");
-                Logger.getLogger("Senha errada");
+                System.out.println("Nenhum usuário encontrado");
             }
 
-            resultado.close();
             resp.sendRedirect("editor");
         } catch (SQLException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginServlet.class.getName()+"###ERRO").log(Level.SEVERE, null, ex);
         } finally {
             try {
+                System.out.println("******CAIU NO FINALLY****");
                 resultado.close();
             } catch (SQLException ex) {
                 Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);

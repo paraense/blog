@@ -7,6 +7,7 @@ package servlets;
 
 import dao.PostagemDao;
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,8 @@ public class EditorServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-     resp.sendRedirect("editor.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/admin/editor.jsp");
+        rd.forward(req, resp);
     
     }
    

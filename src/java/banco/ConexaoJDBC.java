@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  */
 public class ConexaoJDBC {
 
-    public static String URL = "jdbc:mysql://localhost:3306/blog_db";  
+    public static String URL = "jdbc:mysql://localhost:3306/blog";  
     public static String USER = "root";
     public static String SENHA = "root";
 
@@ -22,13 +22,9 @@ public class ConexaoJDBC {
             return DriverManager.getConnection(URL, USER, SENHA);
             
         } catch (SQLException ex) {
-            Logger.getLogger(ConexaoJDBC.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexaoJDBC.class.getName()+"#Erro ao conectar o banco de dados").log(Level.SEVERE, null, ex);
         }
         return null;
-    }
-    
-    public static void fecharConexao(){
-    
     }
 
 }

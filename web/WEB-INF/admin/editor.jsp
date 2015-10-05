@@ -1,8 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" lang="pt-br" xml:lang="pt-br"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <%@include file="templates/head.jsp" %>
+        
+        
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/blog-post.css" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" href="img/favicon-java.png" />
+      
         <script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
             tinymce.init({
@@ -18,14 +28,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="templates/topo.jsp" %>
+
 
         <div class="row">
             <form action="editor" method="post">
                 <div class="col-lg-9" style="width:60%;padding-left:3% ">
                     <h2>Editor</h2>
 
-                    T√≠tulo:
+                    TÌtulo:
                     <input type="text" class="form-control" name="titulo" /><br/>
 
                     <textarea name="texto" style="height:250px;" id="mytextarea"></textarea>
@@ -37,12 +47,12 @@
                 </div>
                 <div style="padding-top:5% " class="col-lg-3">
 
-                    <p>Defina aqui o resumo que ser√° exibido na p√°gina inicial</p>
+                    <p>Defina aqui o resumo que ser· exibido na p·gina inicial</p>
                     Resumo:
                     <textarea name="resumo" class="form-control" style="height: 200px; width: 150%" ></textarea>
                 </div>
             </form>
         </div>
-        <%@include file="templates/rodape.jsp" %>
+       
     </body> 
 </html>

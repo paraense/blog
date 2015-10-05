@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seguranca;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -35,22 +31,21 @@ public class Filtro implements Filter {
 
         Cookie[] c = req.getCookies();
         if (c != null) {
-            System.out.println("Entrou aqui");
             for (Cookie cookie : c) {
                 if (cookie.getName().equals("usuario")) {
-                    //chama a página
-                    System.out.println(cookie.getValue());
+
                     chain.doFilter(request, response);
+
                     return;
                 }
             }
             resp.sendRedirect("login.jsp");
-            System.out.println("Não tem ninguém logado chama página e login");
             return;
-         
-        } 
+
+        }
+        resp.sendRedirect("login.jsp");
         System.out.println("Nâo encontrou nenhum cookie na sessão");
-        
+
     }
 
     @Override
