@@ -57,9 +57,7 @@
                             </div>
                             <br/>
                         </c:forEach>
-                    </c:forEach>
-                    <hr>
-                    <!-- Formulário de comentários -->
+                                  <!-- Formulário de comentários -->
                     <div class="well">
                         <h4>Deixe um comentário:</h4>
                         <form role="form" action="comentario" method="POST">
@@ -78,7 +76,10 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
-                    </div>
+                    </div>                            
+                    </c:forEach>
+                    <hr>
+              
 
                 </div>
 
