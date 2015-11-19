@@ -5,102 +5,70 @@
     <head>
         <!--Imports css, meta etc..-->
         <%@include file="templates/head.jsp" %>
+
     </head>
-
     <body>
-        <!--Barra de menu - topo -->
-        <%@include file="templates/topo.jsp" %>  
-
-        <!-- Page Content -->
-        <div class="container">
+        <div class="container" style=" width:60%;" >
             <div class="row">
-                <!-- Blog Post Content Column -->
-                <div class="col-lg-8">
-                    <!--Post-->
+                <!--BIO -->
+                <div class="col-md-2" style="position: fixed; padding-top:2%;">
+                    <div class="col-md-9">
 
-                    <c:forEach var="p" items="${postagens}">
-                        <!-- Titulo -->
-                        <h1><a href="postagem?id=${p.id}"> ${p.titulo}</a></h1>
-
-                        <!-- Autor -->
-                        <p class="lead">
-                            by <a href="#">John Gomes</a>
+                        <div class="page-head">
+                            <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12075039_938027346264339_3949987739955544799_n.jpg?oh=91fa2067c6bbb4cb03558a84eeace0e8&oe=56EDFD01" style="width: 120px; heigth:170px;"></img>
+                        </div>
+                        <p style="font-size:9px; text-align: justify"><b style="font-size:14px;">John Gomes</b><br/>
+                            Programador Java. Cursou Análise e Desenvolvimento de sistemas. Atualmente trabalha com desenvolvimento de soluções coorporativas utilizando a plataforma Java.
                         </p>
-                        <hr>
-                        <!-- Date/Time -->
-                        <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-
-                        <hr>
-                        <!-- Preview Image -->
-                        <img class="img-responsive" src="http://www.eddic.cn/images/banner_java_se_7_programming.png" alt="">
-                        <hr>
-                        <!-- Post Content -->
-                        <p>
-                            ${p.texto}
-                        </p>
-                        <hr>
-                        <!-- Blog Comments -->
-                        
-                        <!-- Comentários -->
-                        <c:forEach var="c" items="${p.comentarios}">
-                            <!-- Comment -->
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object" src="http://www.iwtraining.com.br/images/Produtos/livre/JAVA_icone.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">${c.nome}
-                                        <small>${c.datahora}</small>
-                                    </h4>
-                                    ${c.texto}
-                                </div>
-                            </div>
-                            <br/>
-                        </c:forEach>
-                                  <!-- Formulário de comentários -->
-                    <div class="well">
-                        <h4>Deixe um comentário:</h4>
-                        <form role="form" action="comentario" method="POST">
-                            <div class="form-group">
-                                Nome:
-                                <input type="text" name="nome" class="form-control" rows="3" required>
-                            </div>
-                            <div class="form-group">
-                                Email:
-                                <input type="email" name="email" class="form-control" rows="3" required>
-                            </div>
-                            <div class="form-group">
-                                Comentário:
-                                <textarea class="form-control" name="texto" rows="3"></textarea>
-                                <input type="hidden" name="id_post" value="${p.id}" />
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </form>
-                    </div>                            
-                    </c:forEach>
-                    <hr>
-              
-
+                    </div>
                 </div>
+                <!--fim Bio-->
 
-                <!-- Menu lateral -->
-                <div class="col-md-4">
-                    <%@include file="templates/lateral.jsp" %>
-                </div>
+                <!--Corpo do Texto-->
+                <div class="col-md-10 pull-right" style="padding-left:4%;" >
+                    <%--<c:forEach var="p" items="${postagens}">--%> 
+                        <div class="page-head">
+                            <h1>${postagens.get(0).titulo}</h1>
+                        </div>
 
-            </div><!-- /.row -->
+                        <p class="lead">${postagens.get(0).titulo}</p>
+                        <p>${postagens.get(0).texto}</p>
+                        <br/>
+
+                        <a href="#">#Java</a>  <a href="#">#SpringMVC</a>  <a href="#">#SQL</a>
+                        <hr>
+                        <a href="/blog"> <- Voltas as postagens</a>
+
+                        <h3>Comentários</h3>
+                        <div id="fb-root"></div>
+                        <script>(function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id))
+                                    return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1631374700447483";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-comments" data-href="http://www.johngomes.com.br/blog/postagem?id=${postagens.get(0).id}" data-width="600" data-numposts="2"></div>
+                    <%--</c:forEach>--%>
+                </div><!--fim texto -->         
+            </div><!--fim row-->
+
             <hr>
-
             <!-- Footer -->
             <%@include file="templates/rodape.jsp" %>
+        </div><!--fim container-->
 
-        </div><!-- /.container -->
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-        <!-- Bootstrap Core JavaScript -->
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
 
-    </body>
 
+    </body>
 </html>
+
