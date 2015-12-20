@@ -14,7 +14,7 @@
     <body>
         <!--Barra de menu - topo -->
         <%@include file="templates/topo.jsp" %> 
-        <div style="text-align: center; width: 80%; padding-left: 17%;">
+        <div style="text-align: center; width: 80%; padding-left: 17%; padding-top: 4%;">
 			<p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt;">
                             <img src="img/avatar.jpg" alt="..." class="img-circle">
                         <h2>John Gomes</h2></p>

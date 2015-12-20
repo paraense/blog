@@ -8,7 +8,12 @@
 
     </head>
     <body>
-        <div class="container" style=" width:60%;" >
+        <div class="container">
+            <div class="row">
+                <%@include  file="templates/topo.jsp" %>
+            </div>
+        </div>
+        <div class="container" style=" width:65%; padding-top:3%" >
             <div class="row">
                 <!--BIO -->
                 <div class="col-md-2" style="position: fixed; padding-top:2%;">
@@ -27,30 +32,29 @@
                 <!--Corpo do Texto-->
                 <div class="col-md-10 pull-right" style="padding-left:4%;" >
                     <%--<c:forEach var="p" items="${postagens}">--%> 
-                        <div class="page-head">
-                            <h1>${postagens.get(0).titulo}</h1>
-                        </div>
+                    <div class="page-head">
+                        <h1>${postagens.get(0).titulo}</h1>
+                    </div>
 
-                        <p class="lead">${postagens.get(0).titulo}</p>
-                        <p>${postagens.get(0).texto}</p>
-                        <br/>
+                    <!--<p class="lead">${postagens.get(0).titulo}</p>-->
+                    <p>${postagens.get(0).texto}</p>
+                    
+                    <a href="#">#Java</a>  <a href="#">#SpringMVC</a>  <a href="#">#SQL</a>
+                    <hr>
+                    <a href="/blog"> <- Voltas as postagens</a>
 
-                        <a href="#">#Java</a>  <a href="#">#SpringMVC</a>  <a href="#">#SQL</a>
-                        <hr>
-                        <a href="/blog"> <- Voltas as postagens</a>
-
-                        <h3>Comentários</h3>
-                        <div id="fb-root"></div>
-                        <script>(function (d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id))
-                                    return;
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1631374700447483";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'facebook-jssdk'));</script>
-                        <div class="fb-comments" data-href="http://www.johngomes.com.br/blog/postagem?id=${postagens.get(0).id}" data-width="600" data-numposts="2"></div>
+                    <h3>Comentários</h3>
+                    <div id="fb-root"></div>
+                    <script>(function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id))
+                                return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1631374700447483";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-comments" data-href="http://localhost:8080/blog/postagem?id=${postagens.get(0).id}" data-width="600" data-numposts="2"></div>
                     <%--</c:forEach>--%>
                 </div><!--fim texto -->         
             </div><!--fim row-->

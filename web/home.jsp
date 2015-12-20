@@ -8,17 +8,12 @@
 
     </head>
     <body>
+        <%@include  file="templates/topo.jsp" %>
         <div class="container" style="width: 70%;">
             
-            <form action="busca">
-                <div class="form-group" >
-                    <input class="form-control" placeholder="Pesquisar" name="filtro" />    
-                </div>
-                 
-            </form>
             <div class="row">
                 <!--BIO -->
-                <div class="col-md-2" style="position: fixed; padding-top:2%;">
+                <div class="col-md-2" style="position: fixed; padding-top:4%;">
                     <div class="col-md-9">
 
                         <div class="page-head">
@@ -32,7 +27,7 @@
                 <!--fim Bio-->
 
                 <!--Corpo do Texto-->
-                <div class="col-md-10 pull-right" style="padding-left:4%;" >
+                <div class="col-md-10 pull-right" style="padding-left:4%; padding-top:4%" >
                     <c:forEach var="p" items="${postagens}"> 
                         <div class="page-head">
                             <h1><a href="postagem?id=${p.id}" >${p.titulo}</a></h1>

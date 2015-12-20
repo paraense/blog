@@ -15,7 +15,7 @@
         <!--Barra de menu - topo -->
         <%@include file="templates/topo.jsp" %> 
 
-        <div style="width:90%; padding-left: 15%; text-align: center;">
+        <div style="width:90%; padding-left: 15%; padding-top: 4%; text-align: center;">
             <h1 dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: left;">
                 <span style="font-size:20px;"><span style="font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Bem vindo!</span></span></h1>
             <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: left;">
