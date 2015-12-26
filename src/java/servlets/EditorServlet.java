@@ -35,7 +35,7 @@ public class EditorServlet extends HttpServlet{
         PostagemDao pd = new PostagemDao();
         //encode para acentuação
         req.setCharacterEncoding("UTF8");
-        resp.sendRedirect(pd.incluirPost(req.getParameter("texto"), req.getParameter("titulo"), req.getParameter("resumo")));
+        resp.sendRedirect(pd.incluirPost(req.getParameter("texto"), req.getParameter("titulo")));
     }
     
     

@@ -86,16 +86,22 @@ public class PostagemDao {
         return null;
     }
 
-    public String incluirPost(String texto, String titulo, String resumo) {
+    public String incluirPost(String texto, String titulo) {
+        
+       //criando o resumo
+       String resumo =  texto.replaceAll("<[^>]*>", "");
+       resumo = "<p>"+ resumo.substring(0, (resumo.length() * 20) /100)+ "</p>...";
+       
+       //data da postagem
+       String data =Formatadores.getData();
 
         try {
-            String data =Formatadores.getData();
-            
             c = ConexaoJDBC.getConexao();
-            c.prepareStatement("INSERT INTO post (id, texto, titulo, resumo, data) VALUES(NULL,'"+texto+"','"+titulo+"','"+resumo+"',"+data+")").execute();
+            c.prepareStatement("INSERT INTO post (id, texto, titulo, resumo, data) "
+                    + "VALUES(NULL,'"+texto+"','"+titulo+"','"+resumo+"',"+data+")").execute();
             return "index.jsp";
-
         } catch (Exception e) {
+        
         }
 
         return "erro";

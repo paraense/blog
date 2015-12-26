@@ -2,13 +2,11 @@ package dao;
 
 import banco.ConexaoJDBC;
 import entidades.Comentario;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
