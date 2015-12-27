@@ -31,15 +31,16 @@
 
                 <!--Corpo do Texto-->
                 <div class="col-md-10 pull-right" style="padding-left:4%;" >
-                    <%--<c:forEach var="p" items="${postagens}">--%> 
                     <div class="page-head">
                         <h1>${postagens.get(0).titulo}</h1>
                     </div>
 
-                    <!--<p class="lead">${postagens.get(0).titulo}</p>-->
+                    <p class="lead">Em ${postagens.get(0).data}</p>
                     <p>${postagens.get(0).texto}</p>
-                    
-                    <a href="#">#Java</a>  <a href="#">#SpringMVC</a>  <a href="#">#SQL</a>
+
+                    <c:forEach var="ct" items="${postagens.get(0).getCategorias()}">
+                        <a href="categoria?id=${ct.id}"># ${ct.nome}</a>    
+                    </c:forEach>
                     <hr>
                     <a href="/blog"> <- Voltas as postagens</a>
 

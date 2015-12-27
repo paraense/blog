@@ -19,6 +19,7 @@ public class HomeServlet extends HttpServlet {
             PostagemDao pd = new PostagemDao();
             req.setAttribute("postagens", pd.listarPostagens(pd.buscaPostagens()));
         } catch (Exception e) {
+            System.out.println("Caiu no cath");
         }
 
         RequestDispatcher rd = req.getRequestDispatcher("/home.jsp");

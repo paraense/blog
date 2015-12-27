@@ -16,6 +16,7 @@ public class Post {
     private String resumo;
     private Date data;
     private List<Comentario> comentarios = new ArrayList<>();
+    private List<Categoria> categorias = new ArrayList<>();
 
     public String getTitulo() {
         return titulo;
@@ -65,5 +66,15 @@ public class Post {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
+    
+    
 
 }
